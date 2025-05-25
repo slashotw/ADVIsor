@@ -6,8 +6,8 @@
 [![Vite](https://img.shields.io/badge/Vite-6+-purple.svg)](https://vitejs.dev/)
 
 A modern, comprehensive Active Directory management system built with React and TypeScript. ADVisor provides a complete solution for managing users, groups, organizational units, permissions, and security policies with an intuitive web interface.
-![image](https://github.com/slashotw/ADVIsor/blob/main/images/image.png?raw=true](https://github.com/slashotw/ADVIsor/blob/main/images/image.png?raw=true)
-![image](https://github.com/slashotw/ADVIsor/blob/main/images/image3.png?raw=true](https://github.com/slashotw/ADVIsor/blob/main/images/image3.png?raw=true)
+![ADVisor Screenshot](images/image.png)
+![ADVisor Screenshot](images/image3.png)
 
 
 ## 🌟 Features
