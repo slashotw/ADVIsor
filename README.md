@@ -1,112 +1,258 @@
-# ADVisor - Active Directory 管理系統
+# ADVisor - Active Directory Management System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue.svg)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6+-purple.svg)](https://vitejs.dev/)
 
-一個現代化、全面的 Active Directory 管理系統，使用 React 和 TypeScript 構建。ADVisor 提供了管理使用者、群組、組織單位、權限和安全政策的完整解決方案，具有直觀的網頁介面。
+A modern, comprehensive Active Directory management system built with React and TypeScript. ADVisor provides a complete solution for managing users, groups, organizational units, permissions, and security policies with an intuitive web interface.
 
-[English README](README_EN.md) | [GitHub 上傳指南](GITHUB_UPLOAD_GUIDE.md)
+## 🌟 Features
 
-## ✨ 主要功能
+### Core Functionality
+- **Dashboard** - System overview, statistics, security alerts
+- **User Management** - User listing, detailed profiles, bulk operations
+- **Group Management** - Security groups, distribution groups, member management
+- **Organizational Units** - Tree structure display, hierarchical management
+- **Permission Management** - Permission matrix, role management, risk assessment
+- **Audit Logs** - Operation records, security events, compliance reports
+- **Workflows** - Automated processes, approval management
+- **Self-Service** - Password reset, profile updates
+- **AD Visualization** - Tree diagrams, relationship graphs
+- **System Settings** - AD connection, security policies configuration
 
-- **儀表板** - 系統概覽、統計數據、安全警示
-- **使用者管理** - 使用者列表、詳細資料、批量操作
-- **群組管理** - 安全群組、通訊群組、成員管理
-- **組織單位** - 樹狀結構顯示、階層管理
-- **權限管理** - 權限矩陣、角色管理、風險評估
-- **稽核日誌** - 操作記錄、安全事件、合規報告
-- **工作流程** - 自動化流程、審批管理
-- **自助服務** - 密碼重設、個人資料更新
-- **AD 視覺化** - 樹狀圖、關係圖表
-- **系統設定** - AD 連線、安全政策配置
+### Technical Highlights
+- **Frontend-Only Architecture** - No backend server required, deploy anywhere
+- **Dual Mode Operation** - Supports both API connection and mock data modes
+- **Responsive Design** - Works on desktop and mobile devices
+- **Modern UI** - Built with Tailwind CSS
+- **Type Safety** - Full TypeScript implementation
+- **Real-time Updates** - Live data refresh capabilities
+- **Offline Support** - Works without internet connection
 
-## 🚀 快速開始
+## 🚀 Quick Start
 
-### 前置需求
+### Prerequisites
 - Node.js 18+
-- npm 或 yarn
+- npm or yarn
 
-### 安裝步驟
+### Installation
 
-1. **複製專案**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/yourusername/advicer.git
 cd advicer
 ```
 
-2. **安裝依賴**
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. **啟動開發伺服器**
+3. **Start development server**
 ```bash
 npm run dev
 ```
 
-4. **開啟瀏覽器**
+4. **Open your browser**
 ```
 http://localhost:5173
 ```
 
-## 📋 運行模式
+## 📋 Operating Modes
 
-### 模式一：純模擬數據（推薦用於展示）
-- ✅ 立即可用
-- ✅ 完整功能展示
-- ✅ 安全 - 不會影響真實系統
+### Mode 1: Pure Mock Data (Recommended for Demo)
 
-### 模式二：API + 模擬數據回退
-- ✅ 可連接真實 AD（需要後端）
-- ✅ 自動回退確保可用性
-- ⚠️ 需要後端 API 配置
+This is the default mode, using frontend mock data with no backend setup required.
 
-## 🛠️ 技術棧
+**Features:**
+- ✅ Ready to use immediately
+- ✅ Complete feature demonstration
+- ✅ Safe - won't affect real systems
+- ❌ Data is not persistent
+- ❌ Cannot connect to real AD
 
-- **React 18** - 前端框架
-- **TypeScript** - 類型安全
-- **Tailwind CSS** - 樣式設計
-- **Vite** - 建置工具
-- **React Router** - 路由管理
-- **Lucide React** - 圖示庫
-- **D3.js** - 數據視覺化
+**Usage:**
+1. Click the gear icon ⚙️ in the top right
+2. Disable "Enable API Connection"
+3. Reload the application
 
-## 🚀 部署
+### Mode 2: API + Mock Data Fallback
 
-### 建置專案
+Attempts to connect to real API, automatically falls back to mock data on failure.
+
+**Features:**
+- ✅ Can connect to real AD (requires backend)
+- ✅ Automatic fallback ensures availability
+- ✅ Perfect for testing environments
+- ⚠️ Requires backend API configuration
+
+**Usage:**
+1. Ensure backend API service is running
+2. Click gear icon ⚙️ to open configuration
+3. Enable "API Connection"
+4. Set correct API URL
+5. Reload the application
+
+## ⚙️ Configuration Options
+
+### API Settings
+- **Enable API Connection** - Whether to attempt real API connection
+- **API Base URL** - Base path for API service (default: `/api`)
+- **Request Timeout** - API request timeout in milliseconds
+- **Auto Fallback** - Whether to fallback to mock data on API failure
+
+### Mock Data Settings
+- **Enable Mock Delay** - Simulate real API delays
+- **Delay Time** - Mock delay duration in milliseconds
+- **Show Warnings** - Whether to show mock data warnings in console
+
+### Feature Toggles
+- **AD Connection Test** - Enable AD connection testing functionality
+- **Offline Mode** - Support offline usage
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/          # Shared components
+│   ├── Layout.tsx      # Main layout
+│   └── ConfigPanel.tsx # Configuration panel
+├── pages/              # Page components
+│   ├── Dashboard.tsx   # Dashboard
+│   ├── Users.tsx       # User management
+│   ├── Groups.tsx      # Group management
+│   └── ...
+├── services/           # Service layer
+│   ├── api.ts         # API service
+│   └── dataService.ts # Data service
+├── config/            # Configuration
+│   └── app.ts         # Application config
+├── types/             # TypeScript type definitions
+│   └── index.ts
+└── App.tsx            # Main application
+```
+
+## 🔧 Development
+
+### Adding New Features
+
+1. **Create new page**
+```typescript
+// src/pages/NewFeature.tsx
+import { useState, useEffect } from 'react';
+import { dataService } from '../services/dataService';
+
+export function NewFeature() {
+  // Component logic
+}
+```
+
+2. **Update routing**
+```typescript
+// src/App.tsx
+<Route path="/new-feature" element={<NewFeature />} />
+```
+
+3. **Add navigation**
+```typescript
+// src/components/Layout.tsx
+{ name: 'New Feature', href: '/new-feature', icon: NewIcon }
+```
+
+### Adding Mock Data
+
+```typescript
+// src/services/dataService.ts
+const mockNewData = [
+  // Mock data
+];
+
+export const dataService = {
+  async getNewData() {
+    if (!appConfig.api.enabled) {
+      return mockDelay(mockNewData);
+    }
+    // API call logic
+  }
+};
+```
+
+## 🚀 Deployment
+
+### Static Deployment (Recommended)
+
+1. **Build the project**
 ```bash
 npm run build
 ```
 
-### 部署選項
+2. **Deploy the dist folder**
+Upload the contents of the `dist` folder to any static hosting service:
 - GitHub Pages
 - Netlify
 - Vercel
 - AWS S3
 - Azure Static Web Apps
 
-詳細部署指南請參考 [GitHub 上傳指南](GITHUB_UPLOAD_GUIDE.md)
+### Docker Deployment
 
-## 📄 授權
+```dockerfile
+FROM nginx:alpine
+COPY dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
 
-本專案採用 MIT 授權 - 詳見 [LICENSE](LICENSE) 檔案
+```bash
+docker build -t advicer .
+docker run -p 80:80 advicer
+```
 
-## 🤝 貢獻
+### GitHub Pages Deployment
 
-歡迎貢獻！請隨時提交 Pull Request。
+1. **Enable GitHub Pages** in repository settings
+2. **Use GitHub Actions** for automatic deployment:
 
-## 📞 支援
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
 
-如有任何問題或疑問：
-1. 查看文檔
-2. 搜尋現有 Issues
-3. 建立新的 Issue
+on:
+  push:
+    branches: [ main ]
 
----
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+```
 
-**注意：** 這是一個展示用的管理系統。在生產環境中使用前，請確保實施適當的安全措施和身份驗證。
+## 🔒 Security Considerations
+
+### Mock Mode
+- ✅ Completely safe, no external connections
+- ✅ Won't affect real systems
+- ✅ Perfect for demos and testing
+
+### API Mode
+- ⚠️ Requires proper authentication
+- ⚠️ Use HTTPS in production
+- ⚠️ Implement proper access controls
 
 ## 📊 Feature Showcase
 
@@ -201,4 +347,4 @@ If you have any questions or issues:
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by [Your Name]
