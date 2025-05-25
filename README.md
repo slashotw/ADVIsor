@@ -7,6 +7,9 @@
 
 A modern, comprehensive Active Directory management system built with React and TypeScript. ADVisor provides a complete solution for managing users, groups, organizational units, permissions, and security policies with an intuitive web interface.
 
+[![https://github.com/slashotw/ADVIsor/blob/main/images/image.png?raw=true]](https://github.com/slashotw/ADVIsor/blob/main/images/image.png?raw=true)
+[![https://github.com/slashotw/ADVIsor/blob/main/images/image3.png?raw=true]](https://github.com/slashotw/ADVIsor/blob/main/images/image3.png?raw=true)
+
 ## 🌟 Features
 
 ### Core Functionality
@@ -69,8 +72,6 @@ This is the default mode, using frontend mock data with no backend setup require
 - ✅ Ready to use immediately
 - ✅ Complete feature demonstration
 - ✅ Safe - won't affect real systems
-- ❌ Data is not persistent
-- ❌ Cannot connect to real AD
 
 **Usage:**
 1. Click the gear icon ⚙️ in the top right
